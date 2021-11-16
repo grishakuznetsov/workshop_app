@@ -1,1 +1,1 @@
-# Negatibe concord database web-page
+# Negative concord database web-page
