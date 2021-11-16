@@ -45,7 +45,10 @@ Native speakers or advanced users (of constructed languages) filled in a mini on
 Questionnaire involved assessing 10 sentences or translating 3 participant negation constructions from English, Russian, or, more rarely, Bulgarian or Ukrainian.
 
 So far, 44 languages were processed. 38 of them are natural, 6 are constructed.
-Full list of languages can be found on a Search page (please use navigation menu on the left)''')
+Full list of languages can be found on a Search page (please use navigation menu on the left)
+
+You can upload your own files to expand the database on Upload page.
+''')
     st.header('What is it?')
     st.write('''Negative concord is a participant negation marked both predicatively and on a participant (argument or adjunct).''')
 
