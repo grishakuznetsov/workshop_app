@@ -15,12 +15,14 @@ Example with polarized
 Gloss for polarized adjunct
 Correct indices for polarized adjunct'''
 columns = names.split('\n')
-';'.join(columns)
+template = ';'.join(columns)
 
 data = pd.read_csv('database.csv', sep=';', names=columns)
 languages = data['Language name']
 
 page = st.sidebar.selectbox('Navigation', options=['Home', 'Search', 'Upload', 'Contacts'])
+
+
 
 if page == 'Home':
     st.image('logo.png')
@@ -43,10 +45,9 @@ Native speakers or advanced users (of constructed languages) filled in a mini on
 Questionnaire involved assessing 10 sentences or translating 3 participant negation constructions from English, Russian, or, more rarely, Bulgarian or Ukrainian.
 
 So far, 44 languages were processed. 38 of them are natural, 6 are constructed.
-Full list of languages can be found in a search area''')
+Full list of languages can be found on a Search page (please use navigation menu on the left)''')
     st.header('What is it?')
-    st.write('''What is it?
-Negative concord is a participant negation marked both predicatively and on a participant (argument or adjunct).''')
+    st.write('''Negative concord is a participant negation marked both predicatively and on a participant (argument or adjunct).''')
 
 if page == 'Search':
     st.title('Search')
@@ -59,6 +60,19 @@ if page == 'Search':
 
 elif page == 'Upload':
     st.title('Upload')
+    st.write(f'''
+    **File extension:** csv
+    
+    **Separator:** ;
+    
+    **Template for columns:**
+    
+    {template}
+    
+    It is possible to upload a file with multiple rows. 
+    
+    **File should not contain column names!**
+    ''')
     uploaded_file = st.file_uploader("")
     if uploaded_file is not None:
         bytes_data = uploaded_file.getvalue()
