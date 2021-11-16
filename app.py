@@ -2,10 +2,8 @@ import streamlit as st
 import pandas as pd
 from io import StringIO
 import csv
-import numpy as np
 
 
-data = pd.read_csv('database.csv', sep=';')
 names = '''Language name
 Prototypical negation marking
 Negation marking with polarized argument
@@ -18,13 +16,11 @@ Gloss for polarized adjunct
 Correct indices for polarized adjunct'''
 columns = names.split('\n')
 ';'.join(columns)
-data.columns = columns
-print(type(data))
 
+data = pd.read_csv('database.csv', sep=';', names=columns)
 languages = data['Language name']
 
 page = st.sidebar.selectbox('Navigation', options=['Home', 'Search', 'Upload', 'Contacts'])
-
 
 if page == 'Home':
     st.image('logo.png')
