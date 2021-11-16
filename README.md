@@ -1,1 +1,1 @@
-# workshop_app
+# Negatibe concord database web-page
